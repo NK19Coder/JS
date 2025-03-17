@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img id="imga" src= "https://media.geeksforgeeks.org/wp-content/uploads/20190506164011/logo3.png"
+		alt="GeeksforGeeks logo"> -->
+    <h1> Hello </h1>
+    <script>
+
+            const imgSrc = "https://media.geeksforgeeks.org/wp-content/uploads/20190506164011/logo3.png";
+            const img = document.createElement("img");
+            img.className = "imga";
+
+            img.addEventListener("load", function () {
+                console.log("Fully Loaded");   
+            });
+
+            setTimeout(() => {
+                document.body.appendChild(img); 
+                img.src = imgSrc; 
+            }, 4000);
+ 
+            window.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM tree Created");
+            });
+
+
+       
+    </script>
+</body>
+</html> 
+
+

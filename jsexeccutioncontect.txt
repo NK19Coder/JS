@@ -1,0 +1,60 @@
+JavaScript Execution Context
+
+Whenever we give a code to execute it will creare a 
+global Execution Context (in case of web it will show
+windows and in case of Node it will show empty {} )
+
+there are 3 types of context 
+-> Global Execution Context
+-> Function Execution Context
+-> Evaluator Execution Context
+
+
+JavaScipt code executes in 2 phases:
+-> Memory Creation Phase or Creeation Phase 
+-> Execution Phase 
+
+************************************************************************************************
+let val1 = 10
+let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+
+let result1 = addNum(val1, val2)
+let result2 = addNum(10,2)  
+
+Steps to run this code: 
+-> Global Execution/Environment inside this
+-> Memeory Creation Phase :
+ val1-> undefiend
+ val2-> undefiend
+ addNum -> defination 
+ result1-> undefiend
+ result2-> undefiend
+
+ -> Execution Phase:
+ val1-> 10
+ val2-> 5
+
+ addNum -> create itts own execution context 
+ (in this it will create a new variable Environment + Execution thread)
+ now again the Memeory Creation Phase and Execution Phase 
+ will be executed for addNum function 
+ ---> Memory Creation : 
+        val1-> undefiend
+        val2-> undefiend 
+        total-> undefiend
+ ---> Execution Context:
+        num1-> 10
+        num2-> 5
+        total-> 15  (now it will be returned in parent execution context or global execution context )
+
+    Now the addNum execution context is deleted
+
+result1-> 15
+
+Again for result2 it will create its execution context
+
+     

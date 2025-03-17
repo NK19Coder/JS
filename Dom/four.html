@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:aliceblue ;">
+     <ul class="language">
+        <li>JavaScript</li> 
+     </ul>
+</body>    
+<script>
+
+    //Add
+
+    function addLanguage(langName){
+       const li =  document.createElement('li')  
+       li.innerHTML = `${langName}`  
+       document.querySelector('.language').appendChild(li) 
+    }
+
+    addLanguage("C++") 
+    addLanguage("Python")
+
+    //but this method is not optimized as we have to traverse the whole tree
+
+function addOptimizedLanguage(langName){
+     const li = document.createElement('li') 
+     li.appendChild(document.createTextNode(langName))   
+     document.querySelector('.language').appendChild(li)
+}
+ addOptimizedLanguage('golang')
+ addOptimizedLanguage('swift')    
+
+
+ //Edit
+
+const secondLang = document.querySelector('li:nth-child(2)')
+// secondLang.innerHTML = "Mojo"   
+const newli = document.createElement('li')
+newli.textContent = "Mojo"
+secondLang.replaceWith(newli) 
+
+const firstLang = document.querySelector('li: first-child') 
+console.log(firstLang)  
+firstLang.outerHTML =  '<li>TypesScript</li>'
+
+
+</script>
+</html> 

@@ -1,0 +1,13 @@
+
+     DOM Diagram for one.html page 
+
+Window --> Document --> HTML
+
+HTML --> Head -> Title -> Text node
+    |         -> Meta -> Attribute 
+
+     --> Body --> Div -> Attribute
+                   --> h1 -> attribute
+                          -> text node
+                   --> para -> text node 
+                      
